@@ -2,6 +2,18 @@
 
 > ⚠️ **Archive Notice:** This project is archived and no longer actively maintained. The live storefront has been discontinued.
 
+### Web Screenshots
+
+| Home Page | Product Listing | Product Detail Page | Cart |
+| :---: | :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/130fa004-d527-44d2-9658-28574d68271d" width="200" alt="Home Page" /> | <img src="https://github.com/user-attachments/assets/b8924524-df14-42c7-b4b0-5a71f6a75f8c" width="200" alt="Product Listing" /> | <img src="https://github.com/user-attachments/assets/2b25cee7-d55b-4c3d-be3b-a28f90a99b73" width="200" alt="Product Detail Page" /> | <img src="https://github.com/user-attachments/assets/175bec19-a09e-4b48-a88a-b18395befd8e" width="200" alt="Cart" /> |
+
+### Mobile Screenshots
+
+| Home Screen | Product Detail Screen | Cart Screen | Dark Mode |
+| :---: | :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/b69c9865-ce18-45ed-ad77-9eba2fe53f5d" width="160" alt="Home Screen" /> | <img src="https://github.com/user-attachments/assets/cbd5827b-96a7-457e-a8d6-df671fcc1d33" width="160" alt="Product Detail Screen" /> | <img src="https://github.com/user-attachments/assets/37f0358c-1020-4e72-b065-f02c4bc8844e" width="160" alt="Cart Screen" /> | <img src="https://github.com/user-attachments/assets/218d52c7-67ba-48b6-829e-c35c78c55baf" width="160" alt="Dark Mode" /> |
+
 ## What the Project Does
 
 **fppcommerce** is a multi-platform e-commerce solution comprising a **Next.js website** and a **Flutter Android app**. Both clients query a single backend via the **Shopify Storefront GraphQL API** and delegate transactions directly to Shopify’s hosted checkout.
