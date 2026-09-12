@@ -1,75 +1,110 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fcommerce&project-name=commerce&repo-name=commerce&demo-title=Next.js%20Commerce&demo-url=https%3A%2F%2Fdemo.vercel.store&demo-image=https%3A%2F%2Fbigcommerce-demo-asset-ksvtgfvnd.vercel.app%2Fbigcommerce.png&env=COMPANY_NAME,SHOPIFY_REVALIDATION_SECRET,SHOPIFY_STORE_DOMAIN,SHOPIFY_STOREFRONT_ACCESS_TOKEN,SITE_NAME)
+# fppcommerce
 
-# Next.js Commerce
+> ⚠️ **Archive Notice:** This project is archived and no longer actively maintained. The live storefront has been discontinued.
 
-A high-performance, server-rendered Next.js App Router ecommerce application.
+## What the Project Does
 
-This template uses React Server Components, Server Actions, `Suspense`, `useOptimistic`, and more.
+**fppcommerce** is a multi-platform e-commerce solution comprising a **Next.js website** and a **Flutter Android app**. Both clients query a single backend via the **Shopify Storefront GraphQL API** and delegate transactions directly to Shopify’s hosted checkout.
 
-<h3 id="v1-note"></h3>
+* **Unified Catalog:** Serves real-time product collections, category filters, and detail pages across platforms.
+* **Shared State & Persistence:** Web cart handling and Flutter app state management via `Provider`, with local theme preferences persisted via `shared_preferences`.
+* **Externalized Payments:** Redirects checkout flows directly to Shopify’s secure hosted checkout interface.
 
-> Note: Looking for Next.js Commerce v1? View the [code](https://github.com/vercel/commerce/tree/v1), [demo](https://commerce-v1.vercel.store), and [release notes](https://github.com/vercel/commerce/releases/tag/v1).
+---
 
-## Providers
+## Why the Project Is Useful
 
-Vercel will only be actively maintaining a Shopify version [as outlined in our vision and strategy for Next.js Commerce](https://github.com/vercel/commerce/pull/966).
+1. **Headless E-Commerce Architecture:** Demonstrates how to decouple presentation layers from an e-commerce backend by consuming a single GraphQL endpoint across both web and native mobile clients.
+2. **Cross-Platform Parity:** Showcases synchronous UX and data state handling across distinct application environments (React/TypeScript and Flutter/Dart).
+3. **Academic Reference:** Built for **BSCS3-2S: ITE 401 (Platform Technologies)** and **ITE 245 (Programming Languages)** to evaluate client-server platform integration.
 
-Vercel is happy to partner and work with any commerce provider to help them get a similar template up and running and listed below. Alternative providers should be able to fork this repository and swap out the `lib/shopify` file with their own implementation while leaving the rest of the template mostly unchanged.
+---
 
-- Shopify (this repository)
-- [BigCommerce](https://github.com/bigcommerce/nextjs-commerce) ([Demo](https://next-commerce-v2.vercel.app/))
-- [Ecwid by Lightspeed](https://github.com/Ecwid/ecwid-nextjs-commerce/) ([Demo](https://ecwid-nextjs-commerce.vercel.app/))
-- [Geins](https://github.com/geins-io/vercel-nextjs-commerce) ([Demo](https://geins-nextjs-commerce-starter.vercel.app/))
-- [Medusa](https://github.com/medusajs/vercel-commerce) ([Demo](https://medusa-nextjs-commerce.vercel.app/))
-- [Prodigy Commerce](https://github.com/prodigycommerce/nextjs-commerce) ([Demo](https://prodigy-nextjs-commerce.vercel.app/))
-- [Saleor](https://github.com/saleor/nextjs-commerce) ([Demo](https://saleor-commerce.vercel.app/))
-- [Shopware](https://github.com/shopwareLabs/vercel-commerce) ([Demo](https://shopware-vercel-commerce-react.vercel.app/))
-- [Swell](https://github.com/swellstores/verswell-commerce) ([Demo](https://verswell-commerce.vercel.app/))
-- [Umbraco](https://github.com/umbraco/Umbraco.VercelCommerce.Demo) ([Demo](https://vercel-commerce-demo.umbraco.com/))
-- [Wix](https://github.com/wix/headless-templates/tree/main/nextjs/commerce) ([Demo](https://wix-nextjs-commerce.vercel.app/))
-- [Fourthwall](https://github.com/FourthwallHQ/vercel-commerce) ([Demo](https://vercel-storefront.fourthwall.app/))
+## How Users Can Get Started
 
-> Note: Providers, if you are looking to use similar products for your demo, you can [download these assets](https://drive.google.com/file/d/1q_bKerjrwZgHwCw0ovfUMW6He9VtepO_/view?usp=sharing).
+### Prerequisites
 
-## Integrations
+* Node.js 18+ and npm
+* Flutter SDK & Android SDK
+* Active Shopify store domain and Storefront API token
 
-Integrations enable upgraded or additional functionality for Next.js Commerce
+### 1. Web Setup (Next.js)
 
-- [Orama](https://github.com/oramasearch/nextjs-commerce) ([Demo](https://vercel-commerce.oramasearch.com/))
-
-  - Upgrades search to include typeahead with dynamic re-rendering, vector-based similarity search, and JS-based configuration.
-  - Search runs entirely in the browser for smaller catalogs or on a CDN for larger.
-
-- [React Bricks](https://github.com/ReactBricks/nextjs-commerce-rb) ([Demo](https://nextjs-commerce.reactbricks.com/))
-  - Edit pages, product details, and footer content visually using [React Bricks](https://www.reactbricks.com) visual headless CMS.
-
-## Running locally
-
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js Commerce. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
-
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control your Shopify store.
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
-
+1. Clone the repository:
 ```bash
-pnpm install
-pnpm dev
+git clone https://github.com/fpaulpalis/fppcommerce.git
+cd fppcommerce
+
 ```
 
-Your app should now be running on [localhost:3000](http://localhost:3000/).
 
-<details>
-  <summary>Expand if you work at Vercel and want to run locally and / or contribute</summary>
+2. Install dependencies (estimated time: 2 minutes):
+```bash
+npm install
 
-1. Run `vc link`.
-1. Select the `Vercel Solutions` scope.
-1. Connect to the existing `commerce-shopify` project.
-1. Run `vc env pull` to get environment variables.
-1. Run `pnpm dev` to ensure everything is working correctly.
-</details>
+```
 
-## Vercel, Next.js Commerce, and Shopify Integration Guide
 
-You can use this comprehensive [integration guide](https://vercel.com/docs/integrations/ecommerce/shopify) with step-by-step instructions on how to configure Shopify as a headless CMS using Next.js Commerce as your headless Shopify storefront on Vercel.
+3. Create `.env.local` in the project root:
+```env
+SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
+SHOPIFY_STOREFRONT_ACCESS_TOKEN=your_storefront_access_token
+
+```
+
+
+4. Run the development server (estimated time: 1 minute):
+```bash
+npm run dev
+
+```
+
+
+5. Navigate to `http://localhost:3000`.
+
+### 2. Mobile Setup (Flutter)
+
+1. Enter the mobile directory:
+```bash
+cd flutter_app
+
+```
+
+
+2. Fetch dependencies (estimated time: 1 minute):
+```bash
+flutter pub get
+
+```
+
+
+3. Set your Storefront credentials in `lib/config.dart`:
+```dart
+const String shopifyDomain = 'your-store.myshopify.com';
+const String storefrontAccessToken = 'your_storefront_access_token';
+
+```
+
+
+4. Run on a connected device or emulator (estimated time: 2 minutes):
+```bash
+flutter run
+
+```
+
+
+
+---
+
+## Where Users Can Get Help
+
+* Open a ticket via [GitHub Issues](https://www.google.com/search?q=https://github.com/fpaulpalis/fppcommerce/issues) for code defects or environment bugs.
+* Refer to [Shopify Storefront API Documentation](https://shopify.dev/docs/api/storefront) for GraphQL schema queries.
+* Inspect [ACKNOWLEDGEMENTS.md](https://www.google.com/search?q=ACKNOWLEDGEMENTS.md) for dependencies and licensing specifics.
+
+---
+
+## Who Maintains and Contributes to the Project
+
+* **Author & Maintainer:** Francis Paul Palis ([@fpaulpalis](https://www.google.com/search?q=https://github.com/fpaulpalis))
+* **Status:** Inactive. Pull requests and issues are unmonitored.
